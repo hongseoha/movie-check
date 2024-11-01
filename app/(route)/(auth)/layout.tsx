@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logoBig from 'public/assets/icons/logo_big.svg';
+import logoBig from 'public/assets/icons/movie-logo-big.svg';
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (

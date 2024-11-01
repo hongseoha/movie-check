@@ -6,7 +6,7 @@ import Link from 'next/link';
 import GuestHeader from './_component/GuestHeader';
 import UserHeader from './_component/UserHeader';
 
-import logoWithTitle from 'public/assets/icons/logo-with-title.svg';
+import logoWithTitle from 'public/assets/icons/movie-logo-small.svg';
 
 export default function Header({ isLogIn }: { isLogIn: boolean }) {
   return (
