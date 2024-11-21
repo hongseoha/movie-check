@@ -34,17 +34,17 @@ const profileActionButtons: ProfileButtonListProps[] = [
   },
   {
     icon: <IconReservationHistory />,
-    title: '예약 내역',
+    title: '예매 내역',
     href: '/my/reservations',
   },
   {
     icon: <IconManageMyActivity />,
-    title: '내 체험 관리',
+    title: '내 영화 관리',
     href: '/my/activities',
   },
   {
     icon: <IconReservationStatus />,
-    title: '예약 현황',
+    title: '예매 현황',
     href: '/my/reservation-status',
   },
 ];

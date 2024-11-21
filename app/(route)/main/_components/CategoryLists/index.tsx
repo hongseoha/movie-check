@@ -16,17 +16,7 @@ interface CategoryListsProps {
 }
 
 const categories = ['전체', '문화 · 예술', '식음료', '스포츠', '투어', '관광', '웰빙'];
-const categoriesName = ['📋 전체', '🎨 문화 · 예술', '🍽️ 식음료', '⚽ 스포츠', '🗺️ 투어', '🏖️ 관광', '🌿 웰빙'];
-
-const emojis: { [key: string]: string } = {
-  '전체': '📋',
-  '문화 · 예술': '🎨',
-  '식음료': '🍽️',
-  '스포츠': '⚽',
-  '투어': '🗺️',
-  '관광': '🏖️',
-  '웰빙': '🌿',
-};
+const categoriesName = ['전체', '액션', '코미디', '로맨스', '스릴러', '다큐멘터리', '기타'];
 
 /**
  * 체험 카테고리 리스트 컴포넌트 입니다.
@@ -53,7 +43,7 @@ export default function CategoryLists({ onCategoryClick, onFilterSelect, selecte
   );
 
   return (
-    <div className='flex flex-col gap-0 mobile:gap-2'>
+    <div className="flex flex-col gap-0 mobile:gap-2">
       <div className="flex h-[41px] justify-between mobile:h-[58px]">
         <div
           ref={scrollRef}
@@ -76,8 +66,8 @@ export default function CategoryLists({ onCategoryClick, onFilterSelect, selecte
         )}
       </div>
       <div className="mt-[25px] flex gap-2 text-2xl font-bold mobile:text-[36px] mobile:leading-[43px]">
-        {emojis[selectedCategory]} <span>{selectedCategory}</span>
+        <span>{categoryMap[selectedCategory]}</span>
       </div>
-    </div>
+    </div>  
   );
 }

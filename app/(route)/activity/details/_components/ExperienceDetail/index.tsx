@@ -178,12 +178,12 @@ export default function ExperienceDetail({ experience, totalReviews, averageRati
               <div className="text-base text-nomad-black">{parse(experience.description)}</div>
             </section>
 
-            <section className="mb-[24px] border-t px-[24px] pt-[40px] tablet:px-0" style={{ borderColor: 'rgba(17, 34, 17, 0.25)', borderTopWidth: '1px' }}>
-              {coordinates ? <NaverMap latitude={coordinates.latitude} longitude={coordinates.longitude} /> : <p>지도를 불러오는 중입니다...</p>}
-              <div className="mt-2 flex items-center gap-2">
-                <Image src={Location} alt="Location" width={16} height={16} />
-                <span className="text-md text-nomad-black">{experience.address}</span>
-              </div>
+            <section
+              className="border-t py-[16px] pl-[24px] pr-[14px] tablet:px-0"
+              style={{ borderColor: 'rgba(17, 34, 17, 0.25)', borderTopWidth: '1px', left: '15px' }}
+            >
+              <h2 className="mb-3 text-xl font-bold text-nomad-black">출연/제작</h2>
+              <div className="text-base text-nomad-black">{parse(experience.address)}</div>
             </section>
 
             <Reviews averageRating={averageRating} totalReviews={totalReviews} getSatisfactionLabel={getSatisfactionLabel} activityId={experience.id} />

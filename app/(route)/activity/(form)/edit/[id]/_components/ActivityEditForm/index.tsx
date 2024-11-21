@@ -64,7 +64,7 @@ function ActivityEditForm({ data, title, buttonTitle, onSubmit, isPending }: Edi
   }, [formData, detailData, isPending]);
 
   return (
-    <FormContainer onSubmit={onSubmitForm} title={title} buttonTitle={buttonTitle} buttonDisable={buttonDisable}>
+    <FormContainer onSubmit={onSubmitForm} title={title} buttonTitle={buttonTitle}>
       <BasicInfoForm
         formData={formData}
         setFormData={setFormData}

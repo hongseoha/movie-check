@@ -11,7 +11,7 @@ export default function NotFound() {
       <div className="flex flex-col items-center gap-3 text-center">
         <h1 className="mx-12 w-[175px] text-4xl mobile:w-[350px] mobile:text-7xl">Not Found</h1>
         <p className="mb-4 text-md font-bold mobile:mb-12 mobile:text-2xl">페이지를 찾을 수 없습니다!</p>
-        <Link href="/" className="flex h-[40px] w-full max-w-[175px] items-center justify-center mobile:h-[50px] mobile:max-w-[350px]">
+        <Link href="/main" className="flex h-[40px] w-full max-w-[175px] items-center justify-center mobile:h-[50px] mobile:max-w-[350px]">
           <Button variant="black" className="size-full text-2lg mobile:text-xl tablet:text-2xl">
             Home
           </Button>

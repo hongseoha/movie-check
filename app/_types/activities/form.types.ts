@@ -13,7 +13,7 @@ export interface Activity {
   bannerImageUrl: string;
   category: string;
   description: string;
-  price?: number;
+  price?: string;
   schedules: Schedule[];
   subImageUrls?: string[];
   title: string;
@@ -52,7 +52,7 @@ export interface ActivityEdit {
   bannerImageUrl: string;
   category: string;
   description: string;
-  price?: number;
+  price?: string;
   scheduleIdsToRemove: number[];
   schedulesToAdd: Schedule[];
   subImageIdsToRemove: number[];
