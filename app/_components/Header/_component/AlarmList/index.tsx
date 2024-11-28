@@ -166,13 +166,23 @@ function ListContent({ extractedContent, notificationId, onDelete }: ListContent
 
   const typeText = (contentType: ListContentType) => {
     switch (contentType) {
-      case ListContentType.CONFIRMED:
+      case ListContentType.DECLINED:
         return (
           <div className="whitespace-nowrap">
             예약이 <span className="text-blue-500">승인</span>되었습니다.
+            <br/>
+            결제수단: 무통장입급 / 현장결제
+            <br/>
+            무통장입금시 다음 계좌를 통해 입금 해 주세요.
+            <br/>
+            [농협]352-1447-7760-83
+            <br/>
+            [토스뱅크]1000-2182-1438
+            <br/>
+            홍서하
           </div>
         );
-      case ListContentType.DECLINED:
+      case ListContentType.CONFIRMED:
         return (
           <div>
             예약이 <span className="text-red-500">거절</span>되었습니다.
@@ -187,9 +197,9 @@ function ListContent({ extractedContent, notificationId, onDelete }: ListContent
 
   const typeDot = (contentType: ListContentType) => {
     switch (contentType) {
-      case ListContentType.CONFIRMED:
-        return <Image src="/assets/icons/alarmList/alarm-dot-confirmed.svg" alt="alarm-dot-confirmed" width={5} height={5} />;
       case ListContentType.DECLINED:
+        return <Image src="/assets/icons/alarmList/alarm-dot-confirmed.svg" alt="alarm-dot-confirmed" width={5} height={5} />;
+      case ListContentType.CONFIRMED:
         return <Image src="/assets/icons/alarmList/alarm-dot-declined.svg" alt="alarm-dot-declined" width={5} height={5} />;
       case ListContentType.NEW:
         return <Image src="/assets/icons/alarmList/alarm-dot-new.svg" alt="alarm-dot-new" width={5} height={5} />;
