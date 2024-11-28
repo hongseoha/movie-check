@@ -50,10 +50,10 @@ export default function CardPending({ activityId, nickname, headCount, reservati
         <p className="text-lg">{headCount}명</p>
       </div>
       <div className="text-right font-SpoqaHanSans">
-        <Button onClick={() => handleAction('confirmed')} className="px-[15px] py-[10px] text-md" variant="black">
+        <Button onClick={() => handleAction('declined')} className="px-[15px] py-[10px] text-md" variant="black">
           승인하기
         </Button>
-        <Button onClick={() => handleAction('declined')} className="ml-[6px] px-[15px] py-[10px] text-md" variant="white">
+        <Button onClick={() => handleAction('confirmed')} className="ml-[6px] px-[15px] py-[10px] text-md" variant="white">
           거절하기
         </Button>
       </div>

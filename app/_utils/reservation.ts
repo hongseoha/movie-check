@@ -19,6 +19,11 @@ export const statusStyles = {
     textColor: 'text-white',
     label: '예약',
   },
+  [ReservationStatus.DECLINED]: {
+    bgColor: 'bg-orange-200',
+    textColor: 'text-white',
+    label: '승인',
+  },
 };
 
 /**

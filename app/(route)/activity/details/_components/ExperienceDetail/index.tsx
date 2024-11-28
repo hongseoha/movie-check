@@ -96,31 +96,31 @@ export default function ExperienceDetail({ experience, totalReviews, averageRati
     return () => mediaQuery.removeEventListener('change', handleMediaChange);
   }, []);
 
-  useEffect(() => {
-    const fetchCoordinatesData = async () => {
-      try {
-        const coords = await fetchCoordinates(experience.address);
-        if (coords) {
-          setCoordinates(coords);
-        }
-      } catch (error) {
-        if (error instanceof AxiosError) {
-          throw error;
-        }
-      }
-    };
+  // useEffect(() => {
+  //   const fetchCoordinatesData = async () => {
+  //     try {
+  //       const coords = await fetchCoordinates(experience.address);
+  //       if (coords) {
+  //         setCoordinates(coords);
+  //       }
+  //     } catch (error) {
+  //       if (error instanceof AxiosError) {
+  //         throw error;
+  //       }
+  //     }
+  //   };
 
-    void fetchCoordinatesData();
-  }, [experience.address]);
+  //   void fetchCoordinatesData();
+  // }, [experience.address]);
 
-  const getSatisfactionLabel = (rating: number) => {
-    if (totalReviews === 0) return '후기 없음';
-    if (rating >= 4) return '매우만족';
-    if (rating >= 3) return '만족';
-    if (rating >= 2) return '보통';
-    if (rating >= 1) return '불만족';
-    return '매우 불만족';
-  };
+  // const getSatisfactionLabel = (rating: number) => {
+  //   if (totalReviews === 0) return '후기 없음';
+  //   if (rating >= 4) return '매우만족';
+  //   if (rating >= 3) return '만족';
+  //   if (rating >= 2) return '보통';
+  //   if (rating >= 1) return '불만족';
+  //   return '매우 불만족';
+  // };
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? allImages.length - 1 : prevIndex - 1));
@@ -174,7 +174,7 @@ export default function ExperienceDetail({ experience, totalReviews, averageRati
               className="border-t py-[16px] pl-[24px] pr-[14px] tablet:px-0"
               style={{ borderColor: 'rgba(17, 34, 17, 0.25)', borderTopWidth: '1px', left: '15px' }}
             >
-              <h2 className="mb-3 text-xl font-bold text-nomad-black">체험 설명</h2>
+              <h2 className="mb-3 text-xl font-bold text-nomad-black">영화 설명</h2>
               <div className="text-base text-nomad-black">{parse(experience.description)}</div>
             </section>
 
@@ -186,7 +186,7 @@ export default function ExperienceDetail({ experience, totalReviews, averageRati
               <div className="text-base text-nomad-black">{parse(experience.address)}</div>
             </section>
 
-            <Reviews averageRating={averageRating} totalReviews={totalReviews} getSatisfactionLabel={getSatisfactionLabel} activityId={experience.id} />
+            {/* <Reviews averageRating={averageRating} totalReviews={totalReviews} getSatisfactionLabel={getSatisfactionLabel} activityId={experience.id} /> */}
           </div>
 
           <div className="relative">

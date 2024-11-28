@@ -93,7 +93,7 @@ function ActivitiesContent({ contents }: { contents: ActivitiesContents }) {
   return (
     <div className={cn(contentsWrapperVariants({ type: contents.type }))}>
       <div>
-        <Rating rating={contents.rating} reviewCount={contents.reviewCount} ratingTarget="manage" />
+        {/* <Rating rating={contents.rating} reviewCount={contents.reviewCount} ratingTarget="manage" /> */}
         <p className={titleStyle}>{contents.title}</p>
       </div>
 
