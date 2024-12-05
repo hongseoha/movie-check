@@ -21,20 +21,20 @@ const contentsWrapperVariants = cva('w-full px-6 under-tablet:pl-3 under-tablet:
 const statusVariants = cva('mb-2 text-base/6.5 font-bold under-tablet:mb-0 under-mobile:text-sm/6.5', {
   variants: {
     status: {
-      [ReservationStatus.confirmed]: 'text-orange-500', // 예약 승인
+      [ReservationStatus.confirmed]: 'text-red-500', // 예약 승인
       [ReservationStatus.canceled]: 'text-gray-600', // 예약 취소
       [ReservationStatus.completed]: 'text-gray-600', // 체험 완료
       [ReservationStatus.pending]: 'text-blue-200', // 예약 신청
-      [ReservationStatus.declined]: 'text-red-500', // 예약 거절
+      [ReservationStatus.declined]: 'text-green-500', // 예약 거절
     },
   },
 });
 
 const statusLables = {
-  pending: '예약 신청',
-  canceled: '예약 취소',
-  confirmed: '예약 승인',
-  declined: '예약 거절',
+  pending: '예매 신청',
+  canceled: '예매 취소',
+  confirmed: '예매 거절',
+  declined: '예매 승인',
   completed: '체험 완료',
 };
 
