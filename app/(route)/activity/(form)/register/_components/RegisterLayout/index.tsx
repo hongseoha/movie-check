@@ -29,7 +29,7 @@ function RegisterLayout() {
       setModalState((prev) => ({
         ...prev,
         isOpen: true,
-        message: '체험 등록이 완료되었습니다',
+        message: '등록이 완료되었습니다',
         onClose: () => {
           router.push(`/activity/details/${id}`);
         },
@@ -38,7 +38,7 @@ function RegisterLayout() {
     onError: (error: AxiosError<ErrorResponseMessage>) => {
       if (error.response) {
         const { status } = error.response;
-        const message = status === 500 ? '죄송합니다. 체험 등록에 실패했습니다.' : error.response.data.message;
+        const message = status === 500 ? '죄송합니다. 등록에 실패했습니다.' : error.response.data.message;
         if (status === 401) {
           setModalState((prev) => ({
             ...prev,
@@ -62,6 +62,10 @@ function RegisterLayout() {
   const { isPending } = activityMutation;
 
   const onSubmitForm = (formData: Activity) => {
+    const formToSubmit = {
+      ...formData,
+      address: formData.address || '기타 정보 없음'
+    };
     activityMutation.mutate(formData);
   };
 
@@ -83,7 +87,7 @@ function RegisterLayout() {
       <CommonModal isOpen={modalState.isOpen} activeCloseModal={activeCloseModal}>
         {modalState.message}
       </CommonModal>
-      <ActivityForm title="내 체험 등록" buttonTitle="등록하기" onSubmit={onSubmitForm} isPending={isPending} />
+      <ActivityForm title="내 영화 등록" buttonTitle="등록하기" onSubmit={onSubmitForm} isPending={isPending} />
     </>
   );
 }

@@ -80,7 +80,7 @@ function LoginForm() {
         setLoginStatus(true, result);
         setModalMessage(messageInModal);
         setTimeout(() => {
-          router.push('/');
+          router.push('/main');
         }, 1500);
       }
     } catch (error) {
@@ -109,7 +109,7 @@ function LoginForm() {
 
   const handleModalClose = () => {
     if (accessToken) {
-      router.replace('/');
+      router.replace('/main');
     }
     closeModal();
   };

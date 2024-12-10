@@ -57,7 +57,7 @@ function ActivityForm({ title, buttonTitle, onSubmit, isPending }: ActivityFormP
   }, [formData, isPending]);
 
   return (
-    <FormContainer onSubmit={handleFormSubmit} title={title} buttonTitle={buttonTitle} buttonDisable={buttonDisable}>
+    <FormContainer onSubmit={handleFormSubmit} title={title} buttonTitle={buttonTitle} >
       <BasicInfoForm
         formData={formData}
         setFormData={setFormData}

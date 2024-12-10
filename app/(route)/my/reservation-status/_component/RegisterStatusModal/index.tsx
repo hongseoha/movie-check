@@ -120,7 +120,7 @@ function RegisterStatusModal({ isOpen, onClose, date, activityId }: RegisterStat
           </p>
         </header>
         <ul className="mt-[27px] flex h-[43px]">
-          {[`신청 ${modalPending}`, `승인 ${modalConfirmed}`, `거절 ${modalDeclined}`, ``].map((label, index) => (
+          {[`신청 ${modalPending}`, `승인 ${modalDeclined}`, `거절 ${modalConfirmed}`, ``].map((label, index) => (
             <li
               key={index}
               className={`cursor-pointer border-b-2 px-[10px] text-xl font-semibold ${activeIndex === index ? 'border-b-4 border-green-200 text-green-200' : ''} ${index === 3 ? 'pointer-events-none flex-grow' : ''}`}

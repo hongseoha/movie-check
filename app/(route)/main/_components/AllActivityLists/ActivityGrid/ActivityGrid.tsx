@@ -54,7 +54,7 @@ export default function ActivityGrid({ activities, isLoading, isError, onClick }
             />
           </div>
           <div className="text-balance">
-            <Rating rating={activity.rating} reviewCount={activity.reviewCount} ratingTarget="all" />
+            {/* <Rating rating={activity.rating} reviewCount={activity.reviewCount} ratingTarget="all" /> */}
             <div className="my-[10px] break-keep text-lg font-semibold mobile:text-xl">{activity.title}</div>
             <div className="text-2lg font-bold mobile:text-xl">
               ₩ {activity.price.toLocaleString()}

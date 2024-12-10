@@ -47,7 +47,7 @@ export default function HotListsCarousel() {
   return (
     <div className="embla relative w-full overflow-hidden">
       <div className="mb-1 flex items-center justify-between mobile:mb-5">
-        <div className="text-2xl mobile:text-[36px] mobile:leading-[43px]">🔥 인기 체험</div>
+        <div className="text-2xl mobile:text-[36px] mobile:leading-[43px]">🔥 인기 영화</div>
         <div className="flex items-center">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

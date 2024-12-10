@@ -1,6 +1,6 @@
 const colors = {
   'black': '#1B1B1B',
-  'nomad-black': '#112211',
+  'nomad-black': '#000000',
   'gray': {
     50: '#FAFAFA',
     100: '#EEEEEE',

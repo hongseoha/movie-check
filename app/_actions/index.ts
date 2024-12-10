@@ -14,5 +14,5 @@ export async function logout() {
   removeCookie('profileImageUrl');
   removeCookie('authConfirm');
 
-  redirect('/');
+  redirect('/main');
 }

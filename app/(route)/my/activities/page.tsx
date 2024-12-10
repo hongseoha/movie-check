@@ -30,10 +30,10 @@ export default function Page() {
     <CommonLayout>
       <StickyLayout>
         <div className="mb-6 flex justify-between under-mobile:mb-4">
-          <h2>내 체험 관리</h2>
+          <h2>내 영화 관리</h2>
           <Link href="/activity/register">
             <button type="button" className="rounded bg-nomad-black px-4 py-2 text-lg font-bold text-white">
-              체험 등록하기
+              영화 등록하기
             </button>
           </Link>
         </div>

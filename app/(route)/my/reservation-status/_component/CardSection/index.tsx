@@ -19,7 +19,7 @@ export default function CardSection({ activityId, selectedScheduleId, activeInde
   const { data: reservationStatus, refetch } = useQuery<ReservationsResponse>({
     queryKey: ['reservationStatus', activityId, selectedScheduleId, activeIndex],
     queryFn: async () => {
-      const status = activeIndex === 0 ? 'pending' : activeIndex === 1 ? 'confirmed' : 'declined';
+      const status = activeIndex === 0 ? 'pending' : activeIndex === 1 ? 'declined' : 'confirmed';
       const response = await axiosInstance.get<ReservationsResponse>(
         `/my-Activities/${activityId}/reservations?scheduleId=${selectedScheduleId}&status=${status}`,
       );
@@ -48,7 +48,7 @@ export default function CardSection({ activityId, selectedScheduleId, activeInde
           ))}
 
         {reservationStatus?.reservations &&
-          activeIndex === 1 &&
+          activeIndex === 2 &&
           reservationStatus.reservations.map((res) => (
             <CardApprove
               key={res.id}
@@ -63,7 +63,7 @@ export default function CardSection({ activityId, selectedScheduleId, activeInde
           ))}
 
         {reservationStatus?.reservations &&
-          activeIndex === 2 &&
+          activeIndex === 1 &&
           reservationStatus.reservations.map((res) => (
             <CardRejected
               key={res.id}

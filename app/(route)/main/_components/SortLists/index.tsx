@@ -6,14 +6,14 @@ import Image from 'next/image';
 import CostBtn from 'public/assets/icons/cost-btn.svg';
 
 interface SortListsProps {
-  onSelect: (sort: 'latest' | 'most_reviewed' | 'price_asc' | 'price_desc') => void;
+  onSelect: (sort: 'latest' | 'most_reviewed') => void;
 }
 
-const selectOptions: { label: string; value: 'latest' | 'most_reviewed' | 'price_asc' | 'price_desc' }[] = [
+const selectOptions: { label: string; value: 'latest' | 'most_reviewed' }[] = [
   { label: '최신 순', value: 'latest' },
-  { label: '리뷰 많은 순', value: 'most_reviewed' },
-  { label: '가격이 낮은 순', value: 'price_asc' },
-  { label: '가격이 높은 순', value: 'price_desc' },
+  { label: '인기 순', value: 'most_reviewed' },
+  // { label: '가격이 낮은 순', value: 'price_asc' },
+  // { label: '가격이 높은 순', value: 'price_desc' },
 ];
 
 /**
@@ -39,7 +39,7 @@ export default function SortLists({ onSelect }: SortListsProps) {
     }, 350);
   };
 
-  const handleClickListItem = (value: 'latest' | 'most_reviewed' | 'price_asc' | 'price_desc', label: string) => {
+  const handleClickListItem = (value: 'latest' | 'most_reviewed', label: string) => {
     setInputLabel(label);
     onSelect(value);
     closeSelectBox();
