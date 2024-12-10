@@ -34,7 +34,7 @@ export enum ReservationStatus {
 export interface ReservationStatusCount {
   [ReservationStatus.COMPLETED]?: number;
   [ReservationStatus.CONFIRMED]: number;
-  [ReservationStatus.DECLINED]?: number;
+  [ReservationStatus.DECLINED]: number;
   [ReservationStatus.PENDING]: number;
 }
 

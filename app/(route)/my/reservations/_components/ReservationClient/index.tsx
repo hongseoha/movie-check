@@ -76,7 +76,7 @@ function Content() {
   return (
     <>
       <div className="flex flex-wrap items-center justify-between gap-1">
-        <h1 className="break-keep text-3xl font-bold leading-[1.3] text-black">예약 내역</h1>
+        <h1 className="break-keep text-3xl font-bold leading-[1.3] text-black">예매 내역</h1>
         {showDropdown && <FilterDropdown setParams={setParams} />}
       </div>
       {data && (

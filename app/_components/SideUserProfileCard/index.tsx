@@ -37,6 +37,9 @@ const profileActionButtons: ProfileButtonListProps[] = [
     title: '예매 내역',
     href: '/my/reservations',
   },
+];
+
+const conditionalActionButtons = [
   {
     icon: <IconManageMyActivity />,
     title: '내 영화 관리',
@@ -64,6 +67,8 @@ export default function SideUserProfileCard() {
     queryKey: ['userProfile'],
     queryFn: getUserProfile,
   });
+
+  const [userId, setUserId] = useState<number | null>(null);
 
   useEffect(() => {
     if (UserProfileData) {
@@ -106,6 +111,19 @@ export default function SideUserProfileCard() {
     uploadImage(file);
   };
 
+  useEffect(() => {
+    const userSession = sessionStorage.getItem('user');
+    if (userSession) {
+      try {
+        const parsedUser = JSON.parse(userSession);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+        setUserId(parsedUser.user?.id || null);
+      } catch (error) {
+        console.error('Error parsing session user:', error);
+      }
+    }
+  }, []);
+
   return (
     <>
       <FullScreenLoader isVisible={isLoading} />
@@ -121,9 +139,16 @@ export default function SideUserProfileCard() {
           <AvatarEditBtnWrapper avatarSrc={currentAvatarSrc} onClick={openModal} />
         </div>
         <div className="flex flex-col gap-2">
+          {/* {profileActionButtons.map((item, idx) => (
+            <ProfileBtn key={idx} icon={item.icon} title={item.title} href={item.href} isSelected={pathname === item.href} />
+          ))} */}
           {profileActionButtons.map((item, idx) => (
             <ProfileBtn key={idx} icon={item.icon} title={item.title} href={item.href} isSelected={pathname === item.href} />
           ))}
+          {userId === 706 &&
+            conditionalActionButtons.map((item, idx) => (
+              <ProfileBtn key={idx} icon={item.icon} title={item.title} href={item.href} isSelected={pathname === item.href} />
+            ))}
         </div>
       </div>
     </>

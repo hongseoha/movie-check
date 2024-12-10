@@ -49,7 +49,7 @@ export default function CalendarCell({ day, monthType, keyDate, reservations, to
         <DateDisplay day={day} monthType={monthType} keyDate={keyDate} today={today} />
         {statusChipData.length > 0 && <Highlighter hasPending={hasPending} hasConfirmed={hasConfirmed} />}
       </div>
-      {children(statusChipData)}
+      {/* {children(statusChipData)} */}
     </td>
   );
 }

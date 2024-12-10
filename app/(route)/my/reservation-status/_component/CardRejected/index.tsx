@@ -12,7 +12,7 @@ export default function CardRejected({ nickname, headCount }: ReservationCardPro
         <p className="text-lg">{headCount}명</p>
       </div>
       <div className="text-right font-SpoqaHanSans text-md">
-        <span className="rounded-[26.5px] bg-red-200 px-[15px] py-[10px] text-right font-bold text-red-500">예약 거절</span>
+        <span className="rounded-[26.5px] bg-orange-200 px-[15px] py-[10px] text-right font-bold text-orange-500">예약 승인</span>
       </div>
     </div>
   );

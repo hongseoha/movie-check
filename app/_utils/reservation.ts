@@ -19,6 +19,11 @@ export const statusStyles = {
     textColor: 'text-white',
     label: '예약',
   },
+  [ReservationStatus.DECLINED]: {
+    bgColor: 'bg-orange-200',
+    textColor: 'text-white',
+    label: '승인',
+  },
 };
 
 /**
@@ -33,7 +38,7 @@ export function filterReservationsByDate(date: string, reservations?: DateReserv
 
 export function getStatusChipData(reservation: DateReservations): Array<StatusChipProps> {
   return Object.values(ReservationStatus)
-    .filter((status) => status !== ReservationStatus.DECLINED)
+    // .filter((status) => status !== ReservationStatus.DECLINED)
     .map((status) => ({
       count: reservation.reservations[status] || 0,
       ...statusStyles[status],
@@ -44,7 +49,7 @@ export function getStatusChipData(reservation: DateReservations): Array<StatusCh
 export function extractReservationData(keyDate: string, reservations?: DateReservations[]) {
   const dayReservation = filterReservationsByDate(keyDate, reservations);
   const hasPending = dayReservation && dayReservation.reservations && dayReservation.reservations[ReservationStatus.PENDING] > 0;
-  const hasConfirmed = dayReservation && dayReservation.reservations && dayReservation.reservations[ReservationStatus.CONFIRMED] > 0;
+  const hasConfirmed = dayReservation && dayReservation.reservations && dayReservation.reservations[ReservationStatus.DECLINED] > 0;
   const statusChipData = dayReservation ? getStatusChipData(dayReservation) : [];
 
   return { hasPending, hasConfirmed, statusChipData };
