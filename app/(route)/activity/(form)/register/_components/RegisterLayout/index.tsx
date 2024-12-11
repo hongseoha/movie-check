@@ -38,7 +38,10 @@ function RegisterLayout() {
     onError: (error: AxiosError<ErrorResponseMessage>) => {
       if (error.response) {
         const { status } = error.response;
-        const message = status === 500 ? '죄송합니다. 등록에 실패했습니다.' : error.response.data.message;
+        let message = status === 500 ? '죄송합니다. 등록에 실패했습니다.' : error.response.data.message;
+        if (message === '주소를 입력해주세요.') {
+          message = '출연/제작을 입력해주세요.';
+        }
         if (status === 401) {
           setModalState((prev) => ({
             ...prev,
@@ -64,7 +67,7 @@ function RegisterLayout() {
   const onSubmitForm = (formData: Activity) => {
     const formToSubmit = {
       ...formData,
-      address: formData.address || '기타 정보 없음'
+      address: formData.address || '기타 정보 없음',
     };
     activityMutation.mutate(formData);
   };
