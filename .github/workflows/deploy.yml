@@ -33,9 +33,9 @@ jobs:
         with:
           source-directory: 'output'
 
-          destination-github-username: yubugi
+          destination-github-username: hongseoha
 
-          destination-repository-name: global-nomad
+          destination-repository-name: movie-check
 
           user-email: ${{ secrets.OFFICIAL_ACCOUNT_EMAIL }}
 
